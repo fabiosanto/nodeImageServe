@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     var request = url.parse(req.url, true);
     var action = request.pathname;
 
-    var hostname = req.headers.hostname;
+    var hostname = req.headers.host;
     console.log(hostname)
     if (!hostname.contains('alessiafrancischiello.com'))
         req.end();
