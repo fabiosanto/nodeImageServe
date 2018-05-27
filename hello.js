@@ -1,7 +1,7 @@
 const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = process.env.HOST || '127.0.0.1';
+var port = process.env.PORT || 8000
 
 const fs = require('fs');
 const url = require('url');
