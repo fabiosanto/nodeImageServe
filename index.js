@@ -10,6 +10,15 @@ const server = http.createServer((req, res) => {
     var request = url.parse(req.url, true);
     var action = request.pathname;
 
+    var hostname = req.headers.hostname;
+    console.log(hostname)
+    if (!hostname.contains('alessiafrancischiello.com'))
+        req.end();
+
+    // var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    // if (ip == '127.0.0.1')
+    //     req.end();
+
     if (action == '/counter') {
         res.writeHead(200, {"Content-Type": "text/plain"});
         res.write("Hi, you are number " + count + " visitors");
