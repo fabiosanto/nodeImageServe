@@ -23,6 +23,6 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(port, function() {
+server.listen(port, '0.0.0.0', function() {
     console.log("App is running on port " + port);
 });
