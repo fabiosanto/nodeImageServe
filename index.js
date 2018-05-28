@@ -24,15 +24,15 @@ const server = http.createServer((req, res) => {
         console.log('host is ' + hostname)
         console.log('origin is ' + origin)
 
-        if (hostname == 'alessiafrancischiello.com' ||
-            origin == 'alessiafrancischiello.com') {
+        // if (hostname == 'alessiafrancischiello.com' ||
+        //     origin == 'alessiafrancischiello.com') {
             var img = fs.readFileSync('./image.jpg');
             res.writeHead(200, {'Content-Type': 'image/jpeg'});
             res.end(img, 'binary');
             count++;
-        } else {
-            res.end();
-        }
+        // } else {
+        //     res.end();
+        // }
 
 
     }
